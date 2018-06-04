@@ -44,7 +44,7 @@
 #}
 <div class="layout-container">
 
-  {% if page.header|render|striptags|trim is not empty %}
+  {% if page.header|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
     <header class="layout-header" role="banner">
       <div class="container">
         {{ page.header }}
@@ -52,13 +52,13 @@
     </header>
   {% endif %}
 
+  {% if page.tabs|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
+    <div class="layout-highlighted">
+      {{ page.highlighted }}
+    </div>
+  {% endif %}
 
-  <div class="layout-highlighted">
-    {{ page.highlighted }}
-  </div>
-
-
-  {% if page.tabs|render|striptags|trim is not empty %}
+  {% if page.tabs|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
   <div class="layout-tabs">
     <div class="container">
       {{ page.tabs }}
@@ -66,13 +66,13 @@
   </div>
   {% endif %}
 
-  {% if page.banner_top|render|striptags|trim is not empty %}
+  {% if page.banner_top|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
     <div class="layout-banner-top">
       {{ page.banner_top }}
     </div>
   {% endif %}
 
-  {% if page.breadcrumbs|render|striptags|trim is not empty %}
+  {% if page.breadcrumbs|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
   <div class="layout-breadcrumbs">
     <div class="container">
       {{ page.breadcrumbs }}
@@ -81,7 +81,7 @@
   {% endif %}
 
   {% if not node %}
-    {% if page.page_title|render|striptags|trim is not empty %}
+    {% if page.page_title|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
       <div class="layout-page-title">
         {% if is_front %}
           <div class="is-front container">
@@ -103,7 +103,7 @@
       {{ page.content }}
     </div>{# /.layout-content #}
 
-    {% if page.sidebar|render|striptags|trim is not empty %}
+    {% if page.sidebar|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
       <aside class="layout-sidebar" role="complementary">
         {{ page.sidebar }}
       </aside>
@@ -111,7 +111,7 @@
 
   </main>
 
-  {% if page.footer|render|striptags|trim is not empty %}
+  {% if page.footer|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
   <div class="layout-footer">
     <footer class="footer" role="contentinfo">
       <div class="container">
@@ -121,7 +121,7 @@
   </div>
   {% endif %}
 
-  {% if page.bottom|render|striptags|trim is not empty %}
+  {% if page.bottom|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
     <div class="layout-bottom">
       <div class="container">
         {{ page.bottom }}
