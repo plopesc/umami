@@ -44,7 +44,7 @@
 #}
 <div class="layout-container">
 
-  {% if page.top|render|striptags|trim is not empty %}
+  {% if page.top|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
     <section class="layout-top">
       <div class="container">
         {{ page.top }}
@@ -52,25 +52,25 @@
     </section>
   {% endif %}
 
-  {% if page.header|render|striptags|trim is not empty %}
+  {% if page.header|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
     <div class="layout-header">
       {{ page.header }}
     </div>
   {% endif %}
 
-  {% if page.highlighted|render|striptags|trim is not empty %}
+  {% if page.highlighted|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
     <div class="layout-highlighted">
       {{ page.highlighted }}
     </div>
   {% endif %}
 
-  {% if page.tabs|render|striptags|trim is not empty %}
+  {% if page.tabs|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
   <div class="layout-tabs">
     {{ page.tabs }}
   </div>
   {% endif %}
 
-  {% if page.breadcrumbs|render|striptags|trim is not empty %}
+  {% if page.breadcrumbs|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
   <div class="layout-breadcrumbs">
     {{ page.breadcrumbs }}
   </div>
@@ -78,7 +78,7 @@
 
   <div class="title-main-wrapper">
 
-    {% if page.page_title|render|striptags|trim is not empty %}
+    {% if page.page_title|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
       <div class="layout-page-title">
         {{ page.page_title }}
       </div>
@@ -91,7 +91,7 @@
         {{ page.content }}
       </div>{# /.layout-content #}
 
-      {% if page.sidebar|render|striptags|trim is not empty %}
+      {% if page.sidebar|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
         <aside class="layout-sidebar" role="complementary">
           {{ page.sidebar }}
         </aside>
@@ -101,11 +101,11 @@
 
   </div>
 
-  {% if page.footer|render|striptags|trim is not empty %}
+  {% if page.footer|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
     {{ page.footer }}
   {% endif %}
 
-  {% if page.bottom|render|striptags|trim is not empty %}
+  {% if page.bottom|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
     <div class="layout-bottom">
       {{ page.bottom }}
     </div>
